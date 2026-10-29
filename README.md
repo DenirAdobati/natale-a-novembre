@@ -1,23 +1,27 @@
-# Natale a Novembre
+# Natale a Novembre · Beautrì
 
-Landing page per l'evento privato **Natale a Novembre**, una serata su invito riservata ad alcune delle nostre clienti beauty.
+Landing page di invito all'evento privato **Natale a Novembre** di Beautrì: venerdì 27 novembre 2026, ore 21:00, in studio (Via Circonvallazione 8, Cologno al Serio).
+
+La pagina è strutturata come una lettera di ringraziamento del team, con il regalo al centro, il biglietto d'invito e il form di iscrizione.
 
 ## Struttura
 
 ```
-index.html      pagina principale
-css/style.css   stile
-js/main.js      gestione del form di iscrizione
+index.html            pagina
+css/style.css         stile (nero, giallo, crema · Poppins + Caveat, come beautri.it)
+js/main.js            form di iscrizione
+assets/               logo
+docs/copy-lettera.md  varianti di copy
 ```
 
 ## Da completare
 
-- [ ] Data, orario e luogo dell'evento (segnaposto `[DATA]`, `[ORARIO]`, `[LUOGO]` in `index.html`)
 - [ ] Collegare il form a un servizio di raccolta iscrizioni (`FORM_ENDPOINT` in `js/main.js`)
-- [ ] Logo e immagini del brand
-- [ ] Testo informativa privacy
+- [ ] Link all'informativa privacy
 - [ ] Pubblicazione online (es. GitHub Pages)
 
 ## Anteprima locale
 
-Basta aprire `index.html` nel browser.
+```
+python3 -m http.server 5173
+```

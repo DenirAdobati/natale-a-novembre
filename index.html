@@ -3,157 +3,128 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Natale a Novembre — Evento privato</title>
-  <meta name="description" content="Natale a Novembre: una serata privata, su invito, riservata ad alcune delle nostre clienti beauty. Festeggiamo insieme il Natale con un regalo pensato solo per te.">
+  <title>Natale a Novembre · Beautrì</title>
+  <meta name="description" content="Una serata su invito per farci gli auguri, ringraziarti e darti un regalo speciale. Venerdì 27 novembre, ore 21:00, da Beautrì a Cologno al Serio.">
   <!-- Evento privato: la pagina non deve comparire nei motori di ricerca -->
   <meta name="robots" content="noindex, nofollow">
-  <meta name="theme-color" content="#4a0f1d">
+  <meta name="theme-color" content="#0a0a0a">
+  <link rel="icon" href="assets/beautri-logo.png">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-  <!-- HERO -->
-  <header class="hero">
-    <div class="snow" aria-hidden="true"></div>
-    <div class="hero__inner container">
-      <p class="eyebrow">Evento privato · Solo su invito</p>
-      <h1 class="hero__title">Natale<br><span>a Novembre</span></h1>
-      <p class="hero__lead">Una serata per festeggiare insieme a te il Natale, in anticipo.<br>E un regalo pensato solo per chi è con noi.</p>
-
-      <ul class="hero__meta">
-        <!-- TODO: inserire data, orario e luogo definitivi -->
-        <li><span class="meta__label">Data</span><span class="meta__value" data-field="data">[DATA]</span></li>
-        <li><span class="meta__label">Orario</span><span class="meta__value" data-field="orario">In serata · [ORARIO]</span></li>
-        <li><span class="meta__label">Luogo</span><span class="meta__value" data-field="luogo">[LUOGO]</span></li>
-      </ul>
-
-      <a href="#iscrizione" class="btn">Riserva il tuo posto</a>
-    </div>
+  <!-- BARRA -->
+  <header class="topbar">
+    <img src="assets/beautri-logo.png" alt="" width="26" height="26">
+    <span>Beautrì</span>
   </header>
 
   <main>
 
-    <!-- L'EVENTO -->
-    <section class="section" id="evento">
-      <div class="container narrow center">
-        <p class="eyebrow">L'evento</p>
-        <h2>Una festa riservata a poche persone</h2>
-        <p>
-          <strong>Natale a Novembre</strong> non è un evento aperto a tutti: è un invito personale
-          rivolto ad alcune delle nostre clienti beauty. Una serata per stare insieme,
-          brindare all'anno trascorso e festeggiare il Natale con un po' di anticipo,
-          in un'atmosfera calda e raccolta.
-        </p>
-      </div>
+    <!-- APERTURA -->
+    <section class="hero grid-bg">
+      <p class="eyebrow">• Evento privato · Solo su invito •</p>
+      <p class="hand hand--red hero__for">Per te,</p>
+      <h1 class="hero__title">Natale<br>a <span>Novembre</span>.</h1>
+      <p class="hero__lead">Ho una cosa da dirti. E una da darti.</p>
+      <a href="#lettera" class="hand hero__more">leggila ↓</a>
+    </section>
+
+    <!-- LETTERA -->
+    <section class="letter-wrap" id="lettera">
+      <article class="letter">
+        <p class="hand letter__hello">Ciao,</p>
+        <p>siamo Daniela, Sabrina, Giada e Desirée. Tutte e quattro, insieme, perché questa lettera volevamo scriverla così.</p>
+        <p>Che anno è stato. Un anno pieno, un anno di <strong>cambiamenti</strong>, uno di quelli che ricorderemo.</p>
+        <p>E se ci pensiamo bene, <mark>una parte di tutto questo sei tu</mark>.</p>
+        <p>Ogni chiacchierata in studio, ogni sorriso allo specchio, ogni «come stai?» che diventava una storia. Hai fatto parte di questo anno con noi. Del nostro cambiamento.</p>
+        <p>E allora volevamo ringraziarti. Come si deve: <strong>abbiamo un regalo per te</strong>. Uno speciale.</p>
+        <p>Il posto migliore per dartelo? Una festa, ovvio. Con pandoro, panettone, un brindisi e tanti auguri detti dal vivo, senza aspettare dicembre.</p>
+        <p>Si chiama <strong>Natale a Novembre</strong>. Ed è su invito: ci saranno solo alcune persone. Tu sei una di queste.</p>
+        <footer class="letter__sign">
+          <span>Un abbraccio grande,</span>
+          <span class="hand">Daniela, Sabrina, Giada e Desirée</span>
+          <span>Il team Beautrì</span>
+        </footer>
+      </article>
     </section>
 
     <!-- IL REGALO -->
-    <section class="section section--gift" id="regalo">
-      <div class="container gift">
-        <div class="gift__visual" aria-hidden="true">
-          <svg viewBox="0 0 120 120" class="gift__icon">
-            <rect x="18" y="52" width="84" height="56" rx="4" />
-            <rect x="12" y="38" width="96" height="18" rx="4" />
-            <rect x="55" y="38" width="10" height="70" class="ribbon" />
-            <path d="M60 38 C 44 18, 26 26, 36 36 C 42 41, 54 39, 60 38 Z" class="ribbon" />
-            <path d="M60 38 C 76 18, 94 26, 84 36 C 78 41, 66 39, 60 38 Z" class="ribbon" />
-          </svg>
-        </div>
-        <div class="gift__text">
-          <p class="eyebrow">Il regalo</p>
-          <h2>Un regalo che esiste solo per te</h2>
-          <p>
-            Durante la serata riceverai un regalo creato appositamente per questa occasione.
-            Non è un prodotto già in vendita e, nel formato in cui lo riceverai,
-            <strong>non sarà possibile acquistarlo</strong>: è un pensiero unico,
-            dedicato esclusivamente alle persone presenti.
-          </p>
-        </div>
-      </div>
+    <section class="gift" id="regalo">
+      <p class="eyebrow">• Al centro di tutto •</p>
+      <svg class="gift__icon" viewBox="0 0 120 120" aria-hidden="true"><rect x="18" y="50" width="84" height="56" rx="4"/><rect x="12" y="34" width="96" height="18" rx="4"/><path d="M60 34v72"/><path d="M60 34c-6-14-26-22-30-10-3 9 16 11 30 10z"/><path d="M60 34c6-14 26-22 30-10 3 9-16 11-30 10z"/></svg>
+      <h2>C'è un regalo <span>con il tuo nome</span>.</h2>
+      <p>Non ti diciamo cos'è. Te lo diamo quella sera, di persona.</p>
+      <p class="hand hand--red">Promesso: ne vale la pena.</p>
     </section>
 
-    <!-- COSA TI ASPETTA -->
-    <section class="section" id="programma">
-      <div class="container center">
-        <p class="eyebrow">Cosa ti aspetta</p>
-        <h2>Dolci, brindisi e atmosfera di festa</h2>
-        <div class="cards">
-          <article class="card">
-            <span class="card__icon" aria-hidden="true">✦</span>
-            <h3>Pandoro &amp; Panettone</h3>
-            <p>I grandi classici del Natale, da condividere insieme.</p>
-          </article>
-          <article class="card">
-            <span class="card__icon" aria-hidden="true">✦</span>
-            <h3>Da bere</h3>
-            <p>Un brindisi per celebrare la serata e l'anno insieme.</p>
-          </article>
-          <article class="card">
-            <span class="card__icon" aria-hidden="true">✦</span>
-            <h3>Il tuo regalo</h3>
-            <p>Un dono esclusivo, pensato e realizzato solo per te.</p>
-          </article>
+    <!-- BIGLIETTO D'INVITO -->
+    <section class="ticket-wrap" id="serata">
+      <p class="eyebrow">• La serata •</p>
+      <div class="ticket">
+        <div class="ticket__head">
+          <div>
+            <p class="ticket__label">Biglietto d'invito</p>
+            <p class="ticket__title">Natale a Novembre</p>
+          </div>
+          <img src="assets/beautri-logo.png" alt="" width="34" height="34">
         </div>
+        <div class="ticket__cut" aria-hidden="true"></div>
+        <dl class="ticket__grid">
+          <div><dt>Quando</dt><dd><strong>Ven 27 novembre</strong>ore 21:00</dd></div>
+          <div><dt>Dove</dt><dd><strong>Da noi, in studio</strong>Cologno al Serio</dd></div>
+          <div><dt>Cosa ti aspetta</dt><dd>Pandoro, panettone, un brindisi e il tuo regalo</dd></div>
+          <div><dt>Per chi</dt><dd>Solo su invito. Il posto è riservato a te.</dd></div>
+        </dl>
+        <a class="ticket__map" href="https://maps.google.com/?q=Beautr%C3%AC+Via+Circonvallazione+8+Cologno+al+Serio" target="_blank" rel="noopener">Via Circonvallazione 8 · Apri in Maps →</a>
       </div>
     </section>
 
     <!-- ISCRIZIONE -->
-    <section class="section section--form" id="iscrizione">
-      <div class="container narrow">
-        <div class="center">
-          <p class="eyebrow">Iscrizione</p>
-          <h2>Conferma la tua presenza</h2>
-          <p>I posti sono limitati e riservati alle clienti invitate. Compila il modulo per riservare il tuo.</p>
-        </div>
+    <section class="rsvp" id="iscrizione">
+      <p class="hand hand--red rsvp__hand">ti aspettiamo!</p>
+      <h2>Conferma la tua presenza</h2>
+      <p class="rsvp__intro">Dimmi solo che ci sei. Ci vuole un minuto.</p>
 
-        <!-- TODO: collegare il form a un servizio di raccolta iscrizioni (vedi js/main.js) -->
-        <form class="form" id="rsvp-form" novalidate>
-          <div class="form__row">
-            <label class="field">
-              <span>Nome *</span>
-              <input type="text" name="nome" autocomplete="given-name" required>
-            </label>
-            <label class="field">
-              <span>Cognome *</span>
-              <input type="text" name="cognome" autocomplete="family-name" required>
-            </label>
-          </div>
-          <div class="form__row">
-            <label class="field">
-              <span>Email *</span>
-              <input type="email" name="email" autocomplete="email" required>
-            </label>
-            <label class="field">
-              <span>Telefono *</span>
-              <input type="tel" name="telefono" autocomplete="tel" required>
-            </label>
-          </div>
-          <label class="field">
-            <span>Note (allergie, richieste particolari…)</span>
-            <textarea name="note" rows="3"></textarea>
-          </label>
-          <label class="check">
-            <input type="checkbox" name="privacy" required>
-            <span>Acconsento al trattamento dei miei dati personali per la gestione dell'evento. *</span>
-          </label>
+      <form class="form" id="rsvp-form" novalidate>
+        <label class="field">
+          <span>Nome e cognome</span>
+          <input type="text" name="nome" placeholder="Es. Maria Rossi" autocomplete="name" required>
+        </label>
+        <label class="field">
+          <span>Telefono</span>
+          <input type="tel" name="telefono" placeholder="+39" autocomplete="tel" required>
+        </label>
+        <label class="field">
+          <span>Email</span>
+          <input type="email" name="email" placeholder="nome@email.it" autocomplete="email" required>
+        </label>
+        <label class="check">
+          <input type="checkbox" name="privacy" required>
+          <span>Acconsento al trattamento dei dati per la gestione dell'evento.</span>
+        </label>
+        <button type="submit" class="btn">Sì, ci sarò</button>
+        <p class="form__status" role="status" aria-live="polite"></p>
+      </form>
 
-          <button type="submit" class="btn btn--full">Confermo la mia presenza</button>
-          <p class="form__status" role="status" aria-live="polite"></p>
-        </form>
-      </div>
+      <!-- P.S. -->
+      <aside class="ps">
+        <p class="ps__title">P.S.</p>
+        <p>Il regalo che riceverai non lo troverai da nessuna parte. Non si può comprare, non si può rifare. L'abbiamo creato solo per questa sera, solo per dirti grazie. Per questo ci tengo che tu ci sia.</p>
+        <p class="ps__sign">— Daniela</p>
+      </aside>
     </section>
 
   </main>
 
   <footer class="footer">
-    <div class="container center">
-      <p class="footer__title">Natale a Novembre</p>
-      <p>Evento privato riservato alle clienti invitate.</p>
-    </div>
+    <img src="assets/beautri-logo.png" alt="Beautrì" width="44" height="44">
+    <span class="footer__name">Beautrì</span>
+    <span>Studio tricologico · Cologno al Serio (BG)</span>
   </footer>
 
   <script src="js/main.js"></script>

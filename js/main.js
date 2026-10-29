@@ -17,7 +17,7 @@ function validate() {
   let valid = true;
   form.querySelectorAll("input[required]").forEach((input) => {
     const ok = input.type === "checkbox" ? input.checked : input.checkValidity();
-    input.closest(".field")?.classList.toggle("is-invalid", !ok);
+    input.closest(".field, .check")?.classList.toggle("is-invalid", !ok);
     if (!ok) valid = false;
   });
   return valid;
@@ -44,7 +44,7 @@ form.addEventListener("submit", async (event) => {
       if (!response.ok) throw new Error("HTTP " + response.status);
     }
     form.reset();
-    setStatus("Grazie! La tua presenza è confermata. Ti aspettiamo ✦", "success");
+    setStatus("Che bello! Ci vediamo venerdì 27 novembre alle 21:00. Il tuo regalo ti aspetta ♡", "success");
   } catch (error) {
     setStatus("Si è verificato un errore. Riprova tra qualche istante.", "error");
   } finally {
