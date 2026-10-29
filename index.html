@@ -23,20 +23,51 @@
     <span>Beautrì</span>
   </header>
 
+  <!-- LUCINE -->
+  <svg class="lights" viewBox="0 0 390 50" preserveAspectRatio="xMidYMin slice" aria-hidden="true">
+    <path d="M0 8 Q 32.5 40 65 8 T 130 8 T 195 8 T 260 8 T 325 8 T 390 8" class="lights__wire"/>
+    <g class="bulb bulb--yellow"><circle cx="32.5" cy="33" r="11"/><rect x="29.5" y="22" width="6" height="5"/><ellipse cx="32.5" cy="33" rx="5" ry="8"/></g>
+    <g class="bulb bulb--white"><circle cx="49" cy="29" r="11"/><rect x="46" y="18" width="6" height="5"/><ellipse cx="49" cy="29" rx="5" ry="8"/></g>
+    <g class="bulb bulb--green"><circle cx="97.5" cy="33" r="11"/><rect x="94.5" y="22" width="6" height="5"/><ellipse cx="97.5" cy="33" rx="5" ry="8"/></g>
+    <g class="bulb bulb--yellow"><circle cx="114" cy="29" r="11"/><rect x="111" y="18" width="6" height="5"/><ellipse cx="114" cy="29" rx="5" ry="8"/></g>
+    <g class="bulb bulb--white"><circle cx="162.5" cy="33" r="11"/><rect x="159.5" y="22" width="6" height="5"/><ellipse cx="162.5" cy="33" rx="5" ry="8"/></g>
+    <g class="bulb bulb--green"><circle cx="179" cy="29" r="11"/><rect x="176" y="18" width="6" height="5"/><ellipse cx="179" cy="29" rx="5" ry="8"/></g>
+    <g class="bulb bulb--yellow"><circle cx="227.5" cy="33" r="11"/><rect x="224.5" y="22" width="6" height="5"/><ellipse cx="227.5" cy="33" rx="5" ry="8"/></g>
+    <g class="bulb bulb--white"><circle cx="244" cy="29" r="11"/><rect x="241" y="18" width="6" height="5"/><ellipse cx="244" cy="29" rx="5" ry="8"/></g>
+    <g class="bulb bulb--green"><circle cx="292.5" cy="33" r="11"/><rect x="289.5" y="22" width="6" height="5"/><ellipse cx="292.5" cy="33" rx="5" ry="8"/></g>
+    <g class="bulb bulb--yellow"><circle cx="309" cy="29" r="11"/><rect x="306" y="18" width="6" height="5"/><ellipse cx="309" cy="29" rx="5" ry="8"/></g>
+    <g class="bulb bulb--white"><circle cx="357.5" cy="33" r="11"/><rect x="354.5" y="22" width="6" height="5"/><ellipse cx="357.5" cy="33" rx="5" ry="8"/></g>
+    <g class="bulb bulb--green"><circle cx="374" cy="29" r="11"/><rect x="371" y="18" width="6" height="5"/><ellipse cx="374" cy="29" rx="5" ry="8"/></g>
+  </svg>
+
+  <!-- CONTO ALLA ROVESCIA: resta fisso in alto mentre si scorre.
+       Venerdì 27 novembre 2026, ore 21:00 (ora italiana) -->
+  <div class="countdown" id="countdown" data-target="2026-11-27T21:00:00+01:00" role="timer">
+    <p class="countdown__label">Mancano</p>
+    <div class="countdown__grid">
+      <div class="countdown__cell"><span class="countdown__num" data-unit="giorni">--</span><span class="countdown__unit">giorni</span></div>
+      <div class="countdown__cell"><span class="countdown__num" data-unit="ore">--</span><span class="countdown__unit">ore</span></div>
+      <div class="countdown__cell"><span class="countdown__num" data-unit="minuti">--</span><span class="countdown__unit">min</span></div>
+      <div class="countdown__cell"><span class="countdown__num" data-unit="secondi">--</span><span class="countdown__unit">sec</span></div>
+    </div>
+    <p class="countdown__live">Ci siamo: è stasera!</p>
+  </div>
+
   <main>
 
     <!-- APERTURA -->
-    <section class="hero grid-bg">
+    <section class="hero">
       <p class="eyebrow">• Evento privato · Solo su invito •</p>
-      <p class="hand hand--red hero__for">Per te,</p>
+      <p class="hand hero__for">Per te,</p>
       <h1 class="hero__title">Natale<br>a <span>Novembre</span>.</h1>
-      <p class="hero__lead">Ho una cosa da dirti. E una da darti.</p>
+      <p class="hero__lead">Abbiamo una cosa da dirti. E una da darti.</p>
       <a href="#lettera" class="hand hero__more">leggila ↓</a>
     </section>
 
     <!-- LETTERA -->
     <section class="letter-wrap" id="lettera">
       <article class="letter">
+        <div class="letter__seal" aria-hidden="true"><img src="assets/beautri-logo.png" alt="" width="36" height="36"></div>
         <p class="hand letter__hello">Ciao,</p>
         <p>siamo Daniela, Sabrina, Giada e Desirée. Tutte e quattro, insieme, perché questa lettera volevamo scriverla così.</p>
         <p>Che anno è stato. Un anno pieno, un anno di <strong>cambiamenti</strong>, uno di quelli che ricorderemo.</p>
@@ -55,11 +86,20 @@
 
     <!-- IL REGALO -->
     <section class="gift" id="regalo">
+      <svg class="star star--1" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7.1L12 17.3 5.8 21l1.6-7.1L2 9.2l7.1-.6z"/></svg>
+      <svg class="star star--2" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7.1L12 17.3 5.8 21l1.6-7.1L2 9.2l7.1-.6z"/></svg>
+      <svg class="star star--3" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7.1L12 17.3 5.8 21l1.6-7.1L2 9.2l7.1-.6z"/></svg>
       <p class="eyebrow">• Al centro di tutto •</p>
-      <svg class="gift__icon" viewBox="0 0 120 120" aria-hidden="true"><rect x="18" y="50" width="84" height="56" rx="4"/><rect x="12" y="34" width="96" height="18" rx="4"/><path d="M60 34v72"/><path d="M60 34c-6-14-26-22-30-10-3 9 16 11 30 10z"/><path d="M60 34c6-14 26-22 30-10 3 9-16 11-30 10z"/></svg>
+      <svg class="gift__icon" viewBox="0 0 120 120" aria-hidden="true">
+        <rect x="18" y="50" width="84" height="56" rx="4" fill="#a3122a"/>
+        <rect x="12" y="34" width="96" height="18" rx="4" fill="#c41d31"/>
+        <rect x="54" y="34" width="12" height="72" fill="#f5c200"/>
+        <path d="M60 34c-6-14-26-22-30-10-3 9 16 11 30 10z" fill="#f5c200"/>
+        <path d="M60 34c6-14 26-22 30-10 3 9-16 11-30 10z" fill="#f5c200"/>
+      </svg>
       <h2>C'è un regalo <span>con il tuo nome</span>.</h2>
       <p>Non ti diciamo cos'è. Te lo diamo quella sera, di persona.</p>
-      <p class="hand hand--red">Promesso: ne vale la pena.</p>
+      <p class="hand gift__hand">Promesso: ne vale la pena.</p>
     </section>
 
     <!-- BIGLIETTO D'INVITO -->
@@ -86,9 +126,9 @@
 
     <!-- ISCRIZIONE -->
     <section class="rsvp" id="iscrizione">
-      <p class="hand hand--red rsvp__hand">ti aspettiamo!</p>
+      <p class="hand rsvp__hand">ti aspettiamo!</p>
       <h2>Conferma la tua presenza</h2>
-      <p class="rsvp__intro">Dimmi solo che ci sei. Ci vuole un minuto.</p>
+      <p class="rsvp__intro">Dicci solo che ci sei. Ci vuole un minuto.</p>
 
       <form class="form" id="rsvp-form" novalidate>
         <label class="field">
@@ -114,14 +154,15 @@
       <!-- P.S. -->
       <aside class="ps">
         <p class="ps__title">P.S.</p>
-        <p>Il regalo che riceverai non lo troverai da nessuna parte. Non si può comprare, non si può rifare. L'abbiamo creato solo per questa sera, solo per dirti grazie. Per questo ci tengo che tu ci sia.</p>
-        <p class="ps__sign">— Daniela</p>
+        <p>Il regalo che riceverai non lo troverai da nessuna parte. Non si può comprare, non si può rifare. L'abbiamo creato solo per questa sera, solo per dirti grazie.</p>
+        <p class="ps__sign">— Daniela e il team</p>
       </aside>
     </section>
 
   </main>
 
   <footer class="footer">
+    <span class="hand footer__wish">Buone feste!</span>
     <img src="assets/beautri-logo.png" alt="Beautrì" width="44" height="44">
     <span class="footer__name">Beautrì</span>
     <span>Studio tricologico · Cologno al Serio (BG)</span>

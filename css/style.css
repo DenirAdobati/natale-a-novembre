@@ -1,16 +1,19 @@
 /* ==========================================================
-   Natale a Novembre · Beautrì
-   Stile ripreso da beautri.it: nero, giallo, crema, Poppins + Caveat
+   Natale a Novembre · Beautrì — stile "Rosso Natale"
+   Base beautri.it (nero, giallo, crema · Poppins + Caveat)
+   con rosso natalizio, lucine e stelle
    ========================================================== */
 
 :root {
   --black: #0a0a0a;
-  --black-soft: #141414;
-  --line-dark: #1f1f1f;
+  --red-xmas: #6e0d1b;
+  --red-dark: #2a0a10;
+  --red-deep: #a3122a;
   --yellow: #f5c200;
   --gold: #8a6a00;
   --red: #e5243b;
   --red-light: #ff5a6a;
+  --pink-light: #ffd9de;
   --cream: #f8f6f2;
   --white: #ffffff;
   --grey: #555555;
@@ -35,7 +38,7 @@ body {
   font-size: 15px;
   line-height: 1.7;
   color: var(--white);
-  background: var(--black);
+  background: var(--red-xmas);
   -webkit-font-smoothing: antialiased;
 }
 
@@ -52,15 +55,6 @@ img { display: block; }
 }
 
 .hand { font-family: var(--hand); font-weight: 700; line-height: 1.2; }
-.hand--red { color: var(--red-light); }
-
-.grid-bg {
-  background-color: var(--black);
-  background-image:
-    linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
-  background-size: 32px 32px;
-}
 
 /* ---------- Barra ---------- */
 .topbar {
@@ -69,71 +63,148 @@ img { display: block; }
   justify-content: center;
   gap: 8px;
   padding: 18px 24px;
-  border-bottom: 1px solid var(--line-dark);
+  background: var(--black);
   font-weight: 600;
   font-size: 16px;
 }
 
+/* ---------- Lucine ---------- */
+.lights { display: block; width: 100%; height: 50px; }
+.lights__wire { fill: none; stroke: var(--red-dark); stroke-width: 2; }
+.bulb rect { fill: var(--red-dark); }
+.bulb circle { opacity: 0.3; }
+.bulb--yellow circle, .bulb--yellow ellipse { fill: var(--yellow); }
+.bulb--white circle, .bulb--white ellipse { fill: var(--white); }
+.bulb--green circle, .bulb--green ellipse { fill: #4fbf74; }
+.bulb--white circle { opacity: 0.25; }
+
+@media (prefers-reduced-motion: no-preference) {
+  .bulb { animation: twinkle 2.4s ease-in-out infinite; }
+  .bulb:nth-of-type(3n+2) { animation-delay: 0.8s; }
+  .bulb:nth-of-type(3n+3) { animation-delay: 1.6s; }
+}
+@keyframes twinkle { 50% { opacity: 0.55; } }
+
+/* ---------- Conto alla rovescia (fisso in alto) ---------- */
+.countdown {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  padding: 10px 16px 12px;
+  background: var(--red-xmas);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  transition: box-shadow 0.2s, background 0.2s;
+}
+.countdown.is-stuck {
+  background: rgba(110, 13, 27, 0.94);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
+}
+.countdown__label { font-family: var(--hand); font-weight: 700; font-size: 22px; color: var(--yellow); line-height: 1; }
+.countdown__grid { display: grid; grid-template-columns: repeat(4, 56px); gap: 6px; }
+.countdown__cell {
+  padding: 6px 2px 5px;
+  border-radius: 10px;
+  background: rgba(10, 10, 10, 0.55);
+  border: 1px solid rgba(245, 194, 0, 0.25);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.countdown__num {
+  font-size: 22px;
+  font-weight: 800;
+  line-height: 1.05;
+  color: var(--yellow);
+  font-variant-numeric: tabular-nums;
+}
+.countdown__unit { font-size: 10px; font-weight: 500; line-height: 1.3; color: var(--pink-light); }
+.countdown__live { display: none; font-family: var(--hand); font-weight: 700; font-size: 26px; color: var(--yellow); line-height: 1.3; }
+.countdown.is-live .countdown__label,
+.countdown.is-live .countdown__grid { display: none; }
+.countdown.is-live .countdown__live { display: block; }
+
+@media (max-width: 360px) {
+  .countdown__label { display: none; }
+}
+
 /* ---------- Apertura ---------- */
 .hero {
-  padding: 56px 24px 64px;
+  padding: 32px 24px 64px;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 18px;
   text-align: center;
 }
-.hero__for { font-size: 34px; transform: rotate(-4deg); }
+.hero__for { font-size: 34px; color: var(--pink-light); transform: rotate(-4deg); }
 .hero__title { font-size: clamp(52px, 14vw, 84px); line-height: 1; letter-spacing: -0.03em; }
 .hero__title span { color: var(--yellow); }
-.hero__lead { max-width: 300px; color: var(--grey-light); line-height: 1.6; }
+.hero__lead { max-width: 300px; color: #f3d6da; line-height: 1.6; }
 .hero__more { margin-top: 8px; font-size: 24px; color: var(--white); text-decoration: none; }
 
 /* ---------- Lettera ---------- */
-.letter-wrap { padding: 0 20px 72px; }
+.letter-wrap { padding: 16px 20px 72px; }
 
 .letter {
+  position: relative;
   max-width: var(--col);
   margin: 0 auto;
-  padding: 32px 24px;
+  padding: 40px 24px 32px;
   background: var(--white);
   color: var(--black);
   border-radius: 18px;
-  box-shadow: 0 24px 50px rgba(0, 0, 0, 0.5);
+  border-top: 6px solid var(--yellow);
+  box-shadow: 0 24px 50px rgba(30, 0, 6, 0.55);
   display: flex;
   flex-direction: column;
   gap: 14px;
 }
+.letter__seal {
+  position: absolute;
+  top: -32px;
+  right: 22px;
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background: var(--yellow);
+  box-shadow: 0 0 0 4px rgba(245, 194, 0, 0.35), 0 6px 14px rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.letter__seal img { filter: brightness(0); }
 .letter__hello { margin-bottom: 4px; font-size: 34px; line-height: 1; }
 .letter mark { background: var(--yellow); color: inherit; padding: 0 4px; font-weight: 600; }
 .letter strong { font-weight: 700; }
 .letter__sign { margin-top: 10px; display: flex; flex-direction: column; font-size: 13px; color: var(--grey); }
-.letter__sign .hand { font-size: 28px; color: var(--gold); }
+.letter__sign .hand { font-size: 28px; color: var(--red-deep); }
 
 /* ---------- Regalo ---------- */
 .gift {
-  padding: 64px 24px;
-  background: var(--black-soft);
-  border-block: 1px solid var(--line-dark);
+  position: relative;
+  padding: 72px 24px 64px;
+  background: var(--black);
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 18px;
   text-align: center;
 }
-.gift__icon {
-  width: 150px;
-  height: 150px;
-  fill: none;
-  stroke: var(--yellow);
-  stroke-width: 4;
-  stroke-linejoin: round;
-  stroke-linecap: round;
-}
+.gift__icon { width: 160px; height: 160px; }
 .gift h2 { font-size: 30px; }
 .gift h2 span { color: var(--yellow); }
 .gift p { color: var(--grey-light); }
-.gift .hand { font-size: 24px; color: var(--red-light); }
+.gift__hand { font-size: 24px; color: var(--red-light) !important; }
+
+.star { position: absolute; fill: var(--yellow); }
+.star--1 { top: 40px; left: 12%; width: 18px; height: 18px; }
+.star--2 { top: 120px; right: 13%; width: 12px; height: 12px; }
+.star--3 { top: 210px; left: 16%; width: 14px; height: 14px; fill: var(--white); }
 
 /* ---------- Biglietto d'invito ---------- */
 .ticket-wrap {
@@ -150,7 +221,7 @@ img { display: block; }
   background: var(--white);
   color: var(--black);
   border-radius: 18px;
-  box-shadow: 0 24px 50px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 24px 50px rgba(30, 0, 6, 0.55);
   text-align: left;
 }
 .ticket__head {
@@ -159,11 +230,11 @@ img { display: block; }
   justify-content: space-between;
   align-items: flex-end;
 }
-.ticket__label { font-size: 11px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gold); }
+.ticket__label { font-size: 11px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--red-deep); }
 .ticket__title { font-size: 22px; font-weight: 800; letter-spacing: -0.02em; line-height: 1.3; }
 
 /* riga tratteggiata con i due "tagli" laterali */
-.ticket__cut { position: relative; margin: 0 20px; border-top: 2px dashed #e2dccf; }
+.ticket__cut { position: relative; margin: 0 20px; border-top: 2px dashed #ecd5d8; }
 .ticket__cut::before,
 .ticket__cut::after {
   content: "";
@@ -172,7 +243,7 @@ img { display: block; }
   width: 24px;
   height: 24px;
   border-radius: 50%;
-  background: var(--black);
+  background: var(--red-xmas);
 }
 .ticket__cut::before { left: -34px; }
 .ticket__cut::after { right: -34px; }
@@ -213,7 +284,7 @@ img { display: block; }
   gap: 18px;
 }
 .rsvp > * { width: 100%; max-width: var(--col); margin-inline: auto; }
-.rsvp__hand { font-size: 28px; color: var(--red); transform: rotate(-3deg); transform-origin: left; }
+.rsvp__hand { font-size: 28px; color: var(--red-deep); transform: rotate(-3deg); transform-origin: left; }
 .rsvp__intro { font-size: 14px; color: var(--grey); line-height: 1.6; }
 
 .form { display: flex; flex-direction: column; gap: 14px; margin-top: 6px; }
@@ -230,13 +301,13 @@ img { display: block; }
 }
 .field input:focus {
   outline: none;
-  border-color: var(--yellow);
-  box-shadow: 0 0 0 3px rgba(245, 194, 0, 0.3);
+  border-color: var(--red-deep);
+  box-shadow: 0 0 0 3px rgba(163, 18, 42, 0.2);
 }
 .field.is-invalid input { border-color: var(--red); }
 
 .check { display: flex; gap: 10px; align-items: flex-start; font-size: 12px; line-height: 1.5; color: var(--grey); }
-.check input { margin-top: 3px; width: 18px; height: 18px; accent-color: var(--black); flex-shrink: 0; }
+.check input { margin-top: 3px; width: 18px; height: 18px; accent-color: var(--red-deep); flex-shrink: 0; }
 .check.is-invalid { color: var(--red); }
 
 .btn {
@@ -244,14 +315,14 @@ img { display: block; }
   margin-top: 6px;
   border: none;
   border-radius: 999px;
-  background: var(--yellow);
-  color: var(--black);
+  background: var(--red-deep);
+  color: var(--white);
   font: 700 16px var(--sans);
   cursor: pointer;
-  box-shadow: 0 10px 24px rgba(245, 194, 0, 0.45);
+  box-shadow: 0 10px 24px rgba(163, 18, 42, 0.35);
   transition: transform 0.2s, box-shadow 0.2s;
 }
-.btn:hover { transform: translateY(-2px); box-shadow: 0 14px 28px rgba(245, 194, 0, 0.55); }
+.btn:hover { transform: translateY(-2px); box-shadow: 0 14px 28px rgba(163, 18, 42, 0.45); }
 .btn:disabled { opacity: 0.6; cursor: wait; transform: none; }
 
 .form__status { min-height: 1.5em; font-size: 14px; text-align: center; }
@@ -279,16 +350,17 @@ img { display: block; }
   right: 30px;
   width: 80px;
   height: 24px;
-  background: rgba(10, 10, 10, 0.15);
+  background: rgba(163, 18, 42, 0.35);
   transform: rotate(-4deg);
 }
-.ps__title { font-size: 30px; color: var(--red); }
+.ps__title { font-size: 30px; color: var(--red-deep); }
 .ps p + p { margin-top: 6px; }
 .ps__sign { margin-top: 12px !important; color: var(--gold); text-align: right; }
 
 /* ---------- Footer ---------- */
 .footer {
   padding: 40px 24px;
+  background: var(--black);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -297,9 +369,10 @@ img { display: block; }
   font-size: 12px;
   color: #a0a0a0;
 }
+.footer__wish { font-size: 30px; color: var(--yellow); }
 .footer__name { font-size: 15px; font-weight: 600; color: var(--white); }
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  .btn, .field input, .ticket__map { transition: none; }
+  .btn, .field input, .ticket__map, .countdown { transition: none; }
 }

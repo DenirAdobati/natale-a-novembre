@@ -1,4 +1,49 @@
-// Natale a Novembre — gestione del form di iscrizione
+// Natale a Novembre — conto alla rovescia e form di iscrizione
+
+// ---------- Conto alla rovescia ----------
+// La data è assoluta (con fuso orario italiano), quindi il conteggio è
+// lo stesso per tutti, ovunque si trovino. Si ricalcola ogni secondo
+// dall'orologio, così non perde mai il passo.
+const countdown = document.getElementById("countdown");
+
+if (countdown) {
+  const target = new Date(countdown.dataset.target).getTime();
+  const cells = {};
+  countdown.querySelectorAll("[data-unit]").forEach((el) => {
+    cells[el.dataset.unit] = el;
+  });
+  const pad = (n) => String(n).padStart(2, "0");
+
+  function tick() {
+    const diff = target - Date.now();
+
+    if (diff <= 0) {
+      countdown.classList.add("is-live");
+      return;
+    }
+
+    const s = Math.floor(diff / 1000);
+    cells.giorni.textContent = Math.floor(s / 86400);
+    cells.ore.textContent = pad(Math.floor((s % 86400) / 3600));
+    cells.minuti.textContent = pad(Math.floor((s % 3600) / 60));
+    cells.secondi.textContent = pad(s % 60);
+
+    // riparte esattamente allo scoccare del secondo successivo
+    setTimeout(tick, 1000 - (Date.now() % 1000));
+  }
+
+  tick();
+
+  // Quando la barra si aggancia in alto le diamo un'ombra per staccarla dal contenuto
+  const before = countdown.previousElementSibling;
+  const updateStuck = () => {
+    countdown.classList.toggle("is-stuck", before.getBoundingClientRect().bottom <= 0);
+  };
+  window.addEventListener("scroll", updateStuck, { passive: true });
+  updateStuck();
+}
+
+// ---------- Form di iscrizione ----------
 
 // TODO: inserire l'URL del servizio che raccoglie le iscrizioni
 // (es. Google Apps Script, Formspree, Netlify Forms...). Finché è vuoto
