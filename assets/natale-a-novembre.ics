@@ -1,0 +1,20 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Beautri//Natale a Novembre//IT
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:natale-a-novembre-2026@beautri.it
+DTSTAMP:20261029T000000Z
+DTSTART:20261127T200000Z
+DTEND:20261127T230000Z
+SUMMARY:Natale a Novembre · Beautrì
+LOCATION:Beautrì\, Via Circonvallazione 8\, Cologno al Serio (BG)
+DESCRIPTION:Serata su invito. Pandoro\, panettone\, un brindisi. E il tuo regalo.
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Domani sera: Natale a Novembre da Beautrì
+TRIGGER:-P1D
+END:VALARM
+END:VEVENT
+END:VCALENDAR
