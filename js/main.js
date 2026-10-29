@@ -29,8 +29,13 @@ if (countdown) {
     }
 
     const s = Math.floor(diff / 1000);
-    cells.giorni.textContent = Math.floor(s / 86400);
-    cells.ore.textContent = pad(Math.floor((s % 86400) / 3600));
+    const days = Math.floor(s / 86400);
+    const hours = Math.floor((s % 86400) / 3600);
+    cells.giorni.textContent = days;
+    cells.ore.textContent = pad(hours);
+    // "1 giorno", "1 ora": l'etichetta segue il numero
+    cells.giorni.nextElementSibling.textContent = days === 1 ? "giorno" : "giorni";
+    cells.ore.nextElementSibling.textContent = hours === 1 ? "ora" : "ore";
     cells.minuti.textContent = pad(Math.floor((s % 3600) / 60));
     cells.secondi.textContent = pad(s % 60);
 
@@ -110,7 +115,7 @@ form.addEventListener("submit", async (event) => {
   event.preventDefault();
 
   if (!validate()) {
-    setStatus("Manca qualcosa: scrivi nome e cognome e spunta «Partecipo».", "error");
+    setStatus("Manca qualcosa: controlla i campi segnati in rosso.", "error");
     return;
   }
 
@@ -137,7 +142,7 @@ form.addEventListener("submit", async (event) => {
     showDone();
     done.focus();
   } catch (error) {
-    setStatus("Qualcosa non è andato. Riprova tra un attimo.", "error");
+    setStatus("Qualcosa è andato storto. Riprova tra un attimo o scrivimi su WhatsApp.", "error");
     button.disabled = false;
   }
 });
