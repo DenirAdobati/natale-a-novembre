@@ -179,24 +179,34 @@ input:focus-visible {
 .letter-wrap { padding: 16px 20px 0; }
 
 /* Daniela appoggiata sul bordo tra lettera (rosso) e regalo (nero):
-   il fondo della foto coincide con la fine della sezione */
+   il fondo della foto coincide con la fine della sezione, la testa
+   sale sopra la lettera fino all'altezza della firma */
 .daniela {
+  position: relative;
+  z-index: 1;
   max-width: var(--col);
-  margin: 24px auto 0;
+  margin: -78px auto 0;
   display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
+  justify-content: flex-end;
+  pointer-events: none;
 }
 .daniela__note {
-  margin-bottom: 64px;
-  font-size: 28px;
+  position: absolute;
+  left: 0;
+  bottom: 56px;
+  z-index: 1;
+  max-width: 150px;
+  font-size: 26px;
   color: var(--pink-light);
   transform: rotate(-4deg);
 }
 .daniela__photo {
-  width: 180px;
+  width: clamp(240px, 68vw, 320px);
   height: auto;
-  margin-right: -8px;
+  margin-right: -16px;
+  /* la parte bassa della foto sfuma nel pacco */
+  -webkit-mask-image: linear-gradient(to bottom, #000 80%, transparent 100%);
+  mask-image: linear-gradient(to bottom, #000 80%, transparent 100%);
   filter: drop-shadow(0 10px 24px rgba(0, 0, 0, 0.35));
 }
 
@@ -235,26 +245,92 @@ input:focus-visible {
 .letter__sign .hand { font-size: 28px; color: var(--red-deep); }
 
 /* ---------- Regalo ---------- */
+/* La sezione è il pacco: carta rossa a righe e nastro giallo */
 .gift {
   position: relative;
-  padding: 48px 24px 64px;
-  background: var(--black);
+  padding: 0 20px;
+  overflow: hidden;
+  background-color: var(--red-deep);
+  background-image: repeating-linear-gradient(45deg, rgba(255, 255, 255, 0.04) 0 14px, transparent 14px 28px);
+}
+/* sfumatura: il rosso scuro della lettera si scioglie nella carta del pacco */
+.gift::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  height: 190px;
+  background: linear-gradient(to bottom, var(--red-xmas) 0%, rgba(110, 13, 27, 0.85) 30%, rgba(110, 13, 27, 0) 100%);
+  pointer-events: none;
+}
+
+/* nastro: righe più chiare/scure ai bordi per dargli spessore */
+.gift__ribbon-h,
+.gift__ribbon-v {
+  position: absolute;
+  background: linear-gradient(var(--ribbon-dir, 180deg), #d9a800 0 4px, var(--yellow) 4px calc(100% - 4px), #d9a800 calc(100% - 4px));
+  box-shadow: 0 4px 10px rgba(60, 0, 10, 0.25);
+}
+.gift__ribbon-h {
+  left: 0;
+  right: 0;
+  top: 176px;
+  height: 40px;
+}
+.gift__inner {
+  position: relative;
+  max-width: var(--col);
+  margin: 0 auto;
+  padding: 262px 0 96px;
+}
+.gift__ribbon-v {
+  --ribbon-dir: 90deg;
+  top: 0;
+  bottom: 0;
+  left: 32px;
+  width: 40px;
+  box-shadow: none;
+  /* entra piano dalla sfumatura, senza un taglio netto in alto */
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 170px);
+  mask-image: linear-gradient(to bottom, transparent 0, #000 170px);
+}
+.gift__bow {
+  position: absolute;
+  z-index: 2;
+  top: 128px;
+  left: -28px;
+  width: 152px;
+  height: 124px;
+  filter: drop-shadow(0 6px 10px rgba(60, 0, 10, 0.35));
+}
+.gift__card {
+  position: relative;
+  z-index: 2;
+  margin-left: 14px;
+  padding: 28px 24px 26px;
+  background: var(--white);
+  color: var(--black);
+  border-radius: 18px;
+  box-shadow: 0 24px 50px rgba(30, 0, 6, 0.5);
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 18px;
-  text-align: center;
+  gap: 12px;
 }
-.gift__icon { width: 160px; height: 160px; }
-.gift h2 { font-size: 30px; }
-.gift h2 span { color: var(--yellow); }
-.gift p { color: var(--grey-light); }
-.gift__hand { font-size: 24px; color: var(--red-light) !important; }
-
-.star { position: absolute; fill: var(--yellow); }
-.star--1 { top: 40px; left: 12%; width: 18px; height: 18px; }
-.star--2 { top: 120px; right: 13%; width: 12px; height: 12px; }
-.star--3 { top: 210px; left: 16%; width: 14px; height: 14px; fill: var(--white); }
+.gift__label { font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--red-deep); }
+.gift__card h2 { font-size: 28px; }
+.gift__card p:not([class]) { color: var(--grey); line-height: 1.6; }
+.gift__hand { font-size: 26px; color: var(--red-deep); }
+.gift__note {
+  position: absolute;
+  z-index: 2;
+  right: 6px;
+  bottom: 34px;
+  font-size: 22px;
+  color: var(--pink-light);
+  transform: rotate(-3deg);
+}
 
 /* ---------- Biglietto d'invito ---------- */
 .ticket-wrap {
