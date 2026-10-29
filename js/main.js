@@ -43,11 +43,11 @@ if (countdown) {
 
 // ---------- Form di iscrizione ----------
 
-// TODO: inserire l'URL del servizio che raccoglie le iscrizioni
-// (es. Google Apps Script, Formspree, Netlify Forms...). Finché è vuoto
-// il form valida i campi e mostra la conferma senza inviare nulla:
-// NON pubblicare la pagina alle clienti prima di averlo collegato.
-const FORM_ENDPOINT = "";
+// URL dell'app web Google Apps Script che scrive le iscrizioni nel foglio Google
+// (il codice dello script è in docs/google-apps-script.gs). Finché è vuoto
+// il form mostra la conferma senza inviare nulla.
+// Foglio: "Natale a Novembre – Iscrizioni" sul Google Drive di boss.beautri@gmail.com
+const FORM_ENDPOINT = "https://script.google.com/macros/s/AKfycbzs9wLkdgjaTG-3bdFy1ZUar-1ucDX7Uf-Z_fzU6Jd_g3lZct5wtkYIdHgtr-Sz1S_q/exec";
 const STORAGE_KEY = "nan-rsvp";
 
 const form = document.getElementById("rsvp-form");
@@ -123,11 +123,13 @@ form.addEventListener("submit", async (event) => {
 
   try {
     if (FORM_ENDPOINT) {
-      const response = await fetch(FORM_ENDPOINT, {
+      // Google Apps Script non permette di leggere la risposta da un altro sito
+      // (mode "no-cors"): se la richiesta parte senza errori di rete la diamo per buona.
+      await fetch(FORM_ENDPOINT, {
         method: "POST",
-        body: new FormData(form),
+        mode: "no-cors",
+        body: new URLSearchParams(new FormData(form)),
       });
-      if (!response.ok) throw new Error("HTTP " + response.status);
     }
     form.reset();
     setStatus("");
