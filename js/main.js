@@ -75,10 +75,15 @@ function validate() {
   return valid;
 }
 
-// controlla un campo appena lo si lascia, ma solo dopo che è stato toccato
+// controlla un campo appena lo si lascia (la casella appena la si tocca),
+// ma solo dopo che è stato toccato
 form.querySelectorAll("input[required]").forEach((input) => {
+  if (input.type === "checkbox") {
+    input.addEventListener("change", () => checkField(input));
+    return;
+  }
   input.addEventListener("blur", () => {
-    if (input.value || input.type === "checkbox") checkField(input);
+    if (input.value) checkField(input);
   });
 });
 
@@ -105,7 +110,7 @@ form.addEventListener("submit", async (event) => {
   event.preventDefault();
 
   if (!validate()) {
-    setStatus("Manca qualcosa: controlla i campi e spunta il consenso.", "error");
+    setStatus("Manca qualcosa: scrivi nome e cognome e spunta «Partecipo».", "error");
     return;
   }
 

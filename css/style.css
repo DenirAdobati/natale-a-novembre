@@ -467,10 +467,28 @@ input:focus-visible {
 .field__error { display: none; font-size: 13px; font-weight: 500; color: #c41d31; }
 .field.is-invalid .field__error { display: block; }
 
-.check { display: flex; gap: 10px; align-items: flex-start; min-height: 44px; padding: 8px 0; font-size: 13px; line-height: 1.5; color: var(--grey); }
-.check input { margin: 0; width: 22px; height: 22px; accent-color: var(--red-deep); flex-shrink: 0; }
-.check a { color: inherit; }
-.check.is-invalid { color: #c41d31; }
+/* "Partecipo": una casella grande, facile da toccare */
+.check {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  min-height: 64px;
+  padding: 14px 16px;
+  border: 2px solid #8f8f8f;
+  border-radius: 14px;
+  background: var(--white);
+  cursor: pointer;
+  transition: border-color 0.2s, background 0.2s;
+}
+.check input { margin: 0; width: 26px; height: 26px; accent-color: var(--red-deep); flex-shrink: 0; cursor: pointer; }
+.check span { display: flex; flex-direction: column; font-size: 13px; line-height: 1.4; color: var(--grey); }
+.check strong { font-size: 17px; font-weight: 700; color: var(--black); }
+.check:has(input:checked) { border-color: var(--red-deep); background: #fdf1f3; }
+.check.is-invalid { border-color: #c41d31; }
+.check.is-invalid + .check__error { display: block; margin-top: -8px; }
+
+.form__privacy { font-size: 12px; line-height: 1.5; color: var(--grey); text-align: center; }
+.form__privacy a { color: inherit; }
 
 .btn {
   height: 58px;

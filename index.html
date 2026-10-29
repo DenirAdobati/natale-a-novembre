@@ -170,28 +170,25 @@
       <!-- TODO: collegare il form a un servizio di raccolta iscrizioni (FORM_ENDPOINT in js/main.js) -->
       <form class="form" id="rsvp-form" novalidate>
         <label class="field">
-          <span>Nome e cognome</span>
-          <input type="text" name="nome" placeholder="Come ti chiami?" autocomplete="name" autocapitalize="words" required aria-describedby="err-nome">
-          <small class="field__error" id="err-nome">Scrivi nome e cognome.</small>
+          <span>Nome</span>
+          <input type="text" name="nome" placeholder="Il tuo nome" autocomplete="given-name" autocapitalize="words" required aria-describedby="err-nome">
+          <small class="field__error" id="err-nome">Scrivi il tuo nome.</small>
         </label>
         <label class="field">
-          <span>Telefono</span>
-          <input type="tel" name="telefono" placeholder="+39" inputmode="tel" autocomplete="tel" pattern="^\+?[0-9\s]{8,15}$" required aria-describedby="err-telefono">
-          <small class="field__error" id="err-telefono">Inserisci un numero valido, es. 333 123 4567.</small>
+          <span>Cognome</span>
+          <input type="text" name="cognome" placeholder="Il tuo cognome" autocomplete="family-name" autocapitalize="words" required aria-describedby="err-cognome">
+          <small class="field__error" id="err-cognome">Scrivi il tuo cognome.</small>
         </label>
-        <label class="field">
-          <span>Email</span>
-          <input type="email" name="email" placeholder="nome@email.it" inputmode="email" autocomplete="email" required aria-describedby="err-email">
-          <small class="field__error" id="err-email">Inserisci un'email valida.</small>
+        <label class="check check--big">
+          <input type="checkbox" name="partecipo" value="sì" required aria-describedby="err-partecipo">
+          <span><strong>Partecipo</strong>Venerdì 27 novembre, ore 21:00</span>
         </label>
-        <label class="check">
-          <input type="checkbox" name="privacy" required>
-          <span>Acconsento al trattamento dei miei dati solo per organizzare questa serata (<a href="https://beautri.it/policies/privacy-policy" target="_blank" rel="noopener">informativa privacy</a>).</span>
-        </label>
+        <small class="field__error check__error" id="err-partecipo">Spunta «Partecipo» per confermare.</small>
         <!-- campo esca contro lo spam: le persone non lo vedono -->
         <input type="text" name="website" class="sr-only" tabindex="-1" autocomplete="off" aria-hidden="true">
-        <button type="submit" class="btn">Sì, ci sarò</button>
+        <button type="submit" class="btn">Conferma</button>
         <p class="form__status" role="status" aria-live="polite"></p>
+        <p class="form__privacy">Nome e cognome servono solo per organizzare la serata. <a href="https://beautri.it/policies/privacy-policy" target="_blank" rel="noopener">Informativa privacy</a></p>
       </form>
 
       <!-- Dopo l'invio il form viene sostituito da questa conferma -->
