@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Natale a Novembre — Evento privato</title>
+  <meta name="description" content="Natale a Novembre: una serata privata, su invito, riservata ad alcune delle nostre clienti beauty. Festeggiamo insieme il Natale con un regalo pensato solo per te.">
+  <!-- Evento privato: la pagina non deve comparire nei motori di ricerca -->
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#4a0f1d">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="snow" aria-hidden="true"></div>
+    <div class="hero__inner container">
+      <p class="eyebrow">Evento privato · Solo su invito</p>
+      <h1 class="hero__title">Natale<br><span>a Novembre</span></h1>
+      <p class="hero__lead">Una serata per festeggiare insieme a te il Natale, in anticipo.<br>E un regalo pensato solo per chi è con noi.</p>
+
+      <ul class="hero__meta">
+        <!-- TODO: inserire data, orario e luogo definitivi -->
+        <li><span class="meta__label">Data</span><span class="meta__value" data-field="data">[DATA]</span></li>
+        <li><span class="meta__label">Orario</span><span class="meta__value" data-field="orario">In serata · [ORARIO]</span></li>
+        <li><span class="meta__label">Luogo</span><span class="meta__value" data-field="luogo">[LUOGO]</span></li>
+      </ul>
+
+      <a href="#iscrizione" class="btn">Riserva il tuo posto</a>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- L'EVENTO -->
+    <section class="section" id="evento">
+      <div class="container narrow center">
+        <p class="eyebrow">L'evento</p>
+        <h2>Una festa riservata a poche persone</h2>
+        <p>
+          <strong>Natale a Novembre</strong> non è un evento aperto a tutti: è un invito personale
+          rivolto ad alcune delle nostre clienti beauty. Una serata per stare insieme,
+          brindare all'anno trascorso e festeggiare il Natale con un po' di anticipo,
+          in un'atmosfera calda e raccolta.
+        </p>
+      </div>
+    </section>
+
+    <!-- IL REGALO -->
+    <section class="section section--gift" id="regalo">
+      <div class="container gift">
+        <div class="gift__visual" aria-hidden="true">
+          <svg viewBox="0 0 120 120" class="gift__icon">
+            <rect x="18" y="52" width="84" height="56" rx="4" />
+            <rect x="12" y="38" width="96" height="18" rx="4" />
+            <rect x="55" y="38" width="10" height="70" class="ribbon" />
+            <path d="M60 38 C 44 18, 26 26, 36 36 C 42 41, 54 39, 60 38 Z" class="ribbon" />
+            <path d="M60 38 C 76 18, 94 26, 84 36 C 78 41, 66 39, 60 38 Z" class="ribbon" />
+          </svg>
+        </div>
+        <div class="gift__text">
+          <p class="eyebrow">Il regalo</p>
+          <h2>Un regalo che esiste solo per te</h2>
+          <p>
+            Durante la serata riceverai un regalo creato appositamente per questa occasione.
+            Non è un prodotto già in vendita e, nel formato in cui lo riceverai,
+            <strong>non sarà possibile acquistarlo</strong>: è un pensiero unico,
+            dedicato esclusivamente alle persone presenti.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- COSA TI ASPETTA -->
+    <section class="section" id="programma">
+      <div class="container center">
+        <p class="eyebrow">Cosa ti aspetta</p>
+        <h2>Dolci, brindisi e atmosfera di festa</h2>
+        <div class="cards">
+          <article class="card">
+            <span class="card__icon" aria-hidden="true">✦</span>
+            <h3>Pandoro &amp; Panettone</h3>
+            <p>I grandi classici del Natale, da condividere insieme.</p>
+          </article>
+          <article class="card">
+            <span class="card__icon" aria-hidden="true">✦</span>
+            <h3>Da bere</h3>
+            <p>Un brindisi per celebrare la serata e l'anno insieme.</p>
+          </article>
+          <article class="card">
+            <span class="card__icon" aria-hidden="true">✦</span>
+            <h3>Il tuo regalo</h3>
+            <p>Un dono esclusivo, pensato e realizzato solo per te.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ISCRIZIONE -->
+    <section class="section section--form" id="iscrizione">
+      <div class="container narrow">
+        <div class="center">
+          <p class="eyebrow">Iscrizione</p>
+          <h2>Conferma la tua presenza</h2>
+          <p>I posti sono limitati e riservati alle clienti invitate. Compila il modulo per riservare il tuo.</p>
+        </div>
+
+        <!-- TODO: collegare il form a un servizio di raccolta iscrizioni (vedi js/main.js) -->
+        <form class="form" id="rsvp-form" novalidate>
+          <div class="form__row">
+            <label class="field">
+              <span>Nome *</span>
+              <input type="text" name="nome" autocomplete="given-name" required>
+            </label>
+            <label class="field">
+              <span>Cognome *</span>
+              <input type="text" name="cognome" autocomplete="family-name" required>
+            </label>
+          </div>
+          <div class="form__row">
+            <label class="field">
+              <span>Email *</span>
+              <input type="email" name="email" autocomplete="email" required>
+            </label>
+            <label class="field">
+              <span>Telefono *</span>
+              <input type="tel" name="telefono" autocomplete="tel" required>
+            </label>
+          </div>
+          <label class="field">
+            <span>Note (allergie, richieste particolari…)</span>
+            <textarea name="note" rows="3"></textarea>
+          </label>
+          <label class="check">
+            <input type="checkbox" name="privacy" required>
+            <span>Acconsento al trattamento dei miei dati personali per la gestione dell'evento. *</span>
+          </label>
+
+          <button type="submit" class="btn btn--full">Confermo la mia presenza</button>
+          <p class="form__status" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container center">
+      <p class="footer__title">Natale a Novembre</p>
+      <p>Evento privato riservato alle clienti invitate.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
