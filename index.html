@@ -7,7 +7,7 @@
   <meta name="description" content="Daniela ti invita a Natale a Novembre: auguri, un brindisi e un regalo per te. Venerdì 27 novembre, ore 21:00, da Beautrì.">
   <!-- Evento privato: la pagina non deve comparire nei motori di ricerca -->
   <meta name="robots" content="noindex, nofollow">
-  <meta name="theme-color" content="#0a0a0a">
+  <meta name="theme-color" content="#0b0b0b">
   <meta name="color-scheme" content="light">
 
   <!-- Anteprima del link (WhatsApp, email…): servono indirizzi completi https -->
@@ -26,7 +26,7 @@
   <link rel="icon" href="assets/beautri-logo.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -56,16 +56,17 @@
 
     <!-- APERTURA -->
     <section class="hero" aria-labelledby="titolo">
-      <p class="eyebrow">• Evento privato · Solo su invito •</p>
+      <p class="eyebrow">Evento privato · Solo su invito</p>
       <p class="hand hero__for">Per te,</p>
-      <h1 class="hero__title" id="titolo">Natale<br>a <span>Novembre</span>.</h1>
+      <h1 class="hero__title" id="titolo">Natale<br><em class="gold-text">a Novembre</em></h1>
+      <p class="hero__rule" aria-hidden="true">✦</p>
       <p class="hero__lead">Ho una cosa da dirti. E una da darti.</p>
       <p class="hero__when">
         <time datetime="2026-11-27T21:00+01:00">Venerdì 27 novembre · ore 21:00</time>
         <span>Beautrì · Cologno al Serio</span>
       </p>
       <div class="hero__actions">
-        <a href="#iscrizione" class="btn btn--yellow">Conferma la tua presenza</a>
+        <a href="#iscrizione" class="btn btn--gold">Conferma la tua presenza</a>
         <a href="#lettera" class="hand hero__more">oppure leggi prima la lettera ↓</a>
       </div>
     </section>
@@ -74,13 +75,17 @@
     <section class="letter-wrap" id="lettera" aria-labelledby="lettera-title">
       <article class="letter">
         <h2 class="sr-only" id="lettera-title">Una lettera da Daniela</h2>
-        <!-- sigillo di ceralacca rossa con il logo in bianco, mezzo fuori dal foglio -->
+        <!-- sigillo di ceralacca dorata con il logo, mezzo fuori dal foglio -->
         <div class="letter__seal" aria-hidden="true">
           <svg viewBox="0 0 100 100">
-            <path d="M50 3 C 62 2, 70 9, 80 12 C 92 16, 97 28, 96 40 C 99 52, 97 63, 91 72 C 86 84, 76 92, 63 95 C 52 99, 40 98, 30 93 C 18 89, 9 80, 5 68 C 1 57, 2 45, 5 35 C 9 22, 18 12, 30 7 C 37 4, 43 3, 50 3 Z" fill="#a3122a"/>
-            <circle cx="50" cy="50" r="33" fill="#8f0f24"/>
-            <circle cx="50" cy="50" r="33" fill="none" stroke="#c41d31" stroke-width="2"/>
-            <path d="M24 30 C 30 20, 40 16, 50 16" stroke="#e04a5e" stroke-width="3" fill="none" stroke-linecap="round" opacity="0.7"/>
+            <defs>
+              <linearGradient id="seal-gold" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#f1d690"/><stop offset=".5" stop-color="#c9a24a"/><stop offset="1" stop-color="#8e6b25"/>
+              </linearGradient>
+            </defs>
+            <path d="M50 3 C 62 2, 70 9, 80 12 C 92 16, 97 28, 96 40 C 99 52, 97 63, 91 72 C 86 84, 76 92, 63 95 C 52 99, 40 98, 30 93 C 18 89, 9 80, 5 68 C 1 57, 2 45, 5 35 C 9 22, 18 12, 30 7 C 37 4, 43 3, 50 3 Z" fill="url(#seal-gold)"/>
+            <circle cx="50" cy="50" r="33" fill="none" stroke="#8e6b25" stroke-width="1.5" opacity=".6"/>
+            <path d="M24 30 C 30 20, 40 16, 50 16" stroke="#fff3c9" stroke-width="3" fill="none" stroke-linecap="round" opacity="0.6"/>
           </svg>
           <img src="assets/beautri-logo.png" alt="" width="40" height="40">
         </div>
@@ -109,24 +114,29 @@
     </section>
 
     <!-- IL REGALO -->
-    <!-- La sezione stessa è il pacco: carta rossa e nastro giallo che la attraversa -->
+    <!-- La sezione stessa è il pacco: carta nera e nastro d'oro che la attraversa -->
     <section class="gift" id="regalo" aria-labelledby="regalo-title">
       <div class="gift__ribbon-h" aria-hidden="true"></div>
       <div class="gift__inner">
         <div class="gift__ribbon-v" aria-hidden="true"></div>
         <svg class="gift__bow" viewBox="0 0 160 130" aria-hidden="true">
           <!-- code del nastro -->
-          <path d="M72 62 L46 122 L60 114 L68 126 L82 66 Z" fill="#d9a800"/>
-          <path d="M88 62 L114 122 L100 114 L92 126 L78 66 Z" fill="#e8b600"/>
+          <defs>
+            <linearGradient id="bow-gold" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#f4dc98"/><stop offset="1" stop-color="#b38a35"/>
+            </linearGradient>
+          </defs>
+          <path d="M72 62 L46 122 L60 114 L68 126 L82 66 Z" fill="#8e6b25"/>
+          <path d="M88 62 L114 122 L100 114 L92 126 L78 66 Z" fill="#a88330"/>
           <!-- asole -->
-          <path d="M80 58 C 52 6, 4 10, 14 46 C 22 70, 56 70, 80 58 Z" fill="#f5c200"/>
-          <path d="M80 58 C 108 6, 156 10, 146 46 C 138 70, 104 70, 80 58 Z" fill="#f5c200"/>
+          <path d="M80 58 C 52 6, 4 10, 14 46 C 22 70, 56 70, 80 58 Z" fill="url(#bow-gold)"/>
+          <path d="M80 58 C 108 6, 156 10, 146 46 C 138 70, 104 70, 80 58 Z" fill="url(#bow-gold)"/>
           <!-- pieghe interne -->
-          <path d="M80 58 C 62 30, 36 26, 30 40 C 42 40, 60 48, 80 58 Z" fill="#d9a800"/>
-          <path d="M80 58 C 98 30, 124 26, 130 40 C 118 40, 100 48, 80 58 Z" fill="#d9a800"/>
+          <path d="M80 58 C 62 30, 36 26, 30 40 C 42 40, 60 48, 80 58 Z" fill="#a88330"/>
+          <path d="M80 58 C 98 30, 124 26, 130 40 C 118 40, 100 48, 80 58 Z" fill="#a88330"/>
           <!-- nodo -->
-          <rect x="68" y="46" width="24" height="24" rx="8" fill="#e8b600"/>
-          <path d="M72 52 h16" stroke="#ffd84d" stroke-width="3" stroke-linecap="round"/>
+          <rect x="68" y="46" width="24" height="24" rx="8" fill="#c9a24a"/>
+          <path d="M72 52 h16" stroke="#fff0c0" stroke-width="3" stroke-linecap="round"/>
         </svg>
         <div class="gift__card">
           <p class="gift__label">Al centro di tutto</p>
@@ -140,7 +150,7 @@
 
     <!-- BIGLIETTO D'INVITO -->
     <section class="ticket-wrap" id="serata" aria-labelledby="biglietto-title">
-      <p class="eyebrow">• La serata •</p>
+      <p class="eyebrow">La serata</p>
       <div class="ticket">
         <div class="ticket__head">
           <div>
